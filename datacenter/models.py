@@ -31,7 +31,7 @@ class Visit(models.Model):
             leaved='leaved at ' + str(self.leaved_at) if self.leaved_at else 'not leaved'
         )
 
-    def localtime_visit(self):
+    def get_visit_localtime(self):
         moscow_time_zone = pytz.timezone(TIME_ZONE)
         localtime_entered_at_visit = localtime(value=self.entered_at, timezone=moscow_time_zone)
         localtime_leaved_at_visit = localtime(value=self.leaved_at, timezone=moscow_time_zone)
