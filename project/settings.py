@@ -9,6 +9,7 @@ env.read_env()
 debug = env.bool('DEBUG')
 db_url = env.str('DB_URL')
 secret_key = env.str('SECRET_KEY')
+allowed_hosts = env.list('ALLOWED_HOSTS')
 
 DATABASES = {
     'default': dj_database_url.parse(db_url)
@@ -22,8 +23,7 @@ DEBUG = debug
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = allowed_hosts
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
