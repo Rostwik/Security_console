@@ -8,6 +8,7 @@ env.read_env()
 
 debug = env.bool('DEBUG')
 db_url = env.str('DB_URL')
+secret_key = env.str('SECRET_KEY')
 
 DATABASES = {
     'default': dj_database_url.parse(db_url)
@@ -15,7 +16,7 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = secret_key
 
 DEBUG = debug
 
