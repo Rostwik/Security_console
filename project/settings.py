@@ -1,15 +1,13 @@
 import os
 
-from dotenv import load_dotenv
 from environs import Env
 import dj_database_url
 
-load_dotenv()
 env = Env()
 env.read_env()
 
 debug = env.bool("DEBUG")
-db_url = os.getenv("DB_URL")
+db_url = env.str("DB_URL")
 
 DATABASES = {
     'default': dj_database_url.parse(db_url)
