@@ -1,4 +1,5 @@
 import os
+
 from dotenv import load_dotenv
 from environs import Env
 import dj_database_url
