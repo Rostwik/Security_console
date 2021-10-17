@@ -6,8 +6,8 @@ import dj_database_url
 env = Env()
 env.read_env()
 
-debug = env.bool("DEBUG")
-db_url = env.str("DB_URL")
+debug = env.bool('DEBUG')
+db_url = env.str('DB_URL')
 
 DATABASES = {
     'default': dj_database_url.parse(db_url)
@@ -19,7 +19,7 @@ SECRET_KEY = 'REPLACE_ME'
 
 DEBUG = debug
 
-ROOT_URLCONF = "project.urls"
+ROOT_URLCONF = 'project.urls'
 
 ALLOWED_HOSTS = ['*']
 
