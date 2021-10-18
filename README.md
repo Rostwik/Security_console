@@ -33,12 +33,22 @@ pip install -r requirements.txt
 ## Как запустить программу.
 
 Необходимо создать файл .env в корне папки программы, и заполнить следующие параметры для подключения к бд:
-- ENGINE
-- HOST
-- PORT
-- NAME
-- USER
-- PASSWORD
+
+- DB_URL
+- DEBUG
+- SECRET_KEY
+- ALLOWED_HOSTS
+
+DB_URL содержит все необходимы данные для подключения к БД. DB_URL необходимо передать строго в соответствии
+с шаблоном, который зависит от типа БД.
+
+Пример для PostgreSQL: 
+
+postgres://USER:PASSWORD@HOST:PORT/NAME
+[Подробнее можно узнать здесь](https://github.com/jacobian/dj-database-url)
+
+
+
 
 ```
 python manage.py runserver 0.0.0.0:8000
